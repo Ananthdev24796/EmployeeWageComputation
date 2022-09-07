@@ -24,6 +24,9 @@ public class EmployeeWage {
 	 *Employee & Wage
 	 * 
 	 */
+	/*uc4
+	 * partTimeWorkingHrs
+	 */
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -33,16 +36,19 @@ public class EmployeeWage {
 		final int totalWorkingHrs = 8;
 		int dailyWages = 0;
 		int partTimeWorkingHrs = 4;
-		if(random==1) {
+		switch (random) {
+		case 1:
 			System.out.println("Employee is Present");
 			dailyWages = WagesPerHours*totalWorkingHrs;
 			System.out.println("Employee Daily Wages"+dailyWages);
-		}else if(random==2) {
+			break;
+		case 2:
 			System.out.println("Employee is Present");
 			dailyWages = WagesPerHours*partTimeWorkingHrs;
 			System.out.println("PartTimeEmployee Daily Wages"+dailyWages);
+			break;
 			
-		}else{
+		case 0:
 			System.out.println("Employee is Absent");
 		}
 		
