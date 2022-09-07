@@ -29,8 +29,11 @@ public class EmployeeWage {
 	 */
 	/*
 	 * UC5
-	 * Calculating Wages
-	 *for a Month
+	 * Calculating Wages for a Month
+	 */
+	/*
+	 * UC6
+	 * Calculate Wages till a condition of total working hours or days is reached for  month - Assume 100 hours
 	 */
 	
 	public static void main(String[] args) {
@@ -42,23 +45,29 @@ public class EmployeeWage {
 		int partTimeWorkingHrs = 4;
 		 int totalWrkDays =20;
 		 int totalWages=0;
-		 for(int day = 1 ; day<=totalWrkDays;day++) {
+		 final int maxWorkHrs = 100;
+		 int empHrs =0;
+		 int wrkdays =0;
+		 while (empHrs <= maxWorkHrs &&  wrkdays < totalWrkDays ){
+			 wrkdays++;
+			 System.out.println("Total Hours"+empHrs);
 		int random = (int)(Math.random()*3);
 		System.out.println(random);
 		
 		switch (random) {
 		case 1:
-			System.out.println("Employee is Present");
+			System.out.println("Employee is Present Full Time");
 			dailyWages = WagesPerHours*totalWorkingHrs;
-			System.out.println("Employee Daily Wages"+dailyWages);
 			totalWages = totalWages+dailyWages;
+			empHrs = empHrs+totalWorkingHrs;
 			System.out.println(totalWages);
 			break;
 		case 2:
-			System.out.println("Employee is Present");
+			System.out.println("Employee is Present Part Time");
 			dailyWages = WagesPerHours*partTimeWorkingHrs;
 			System.out.println("PartTimeEmployee Daily Wages"+dailyWages);
 			totalWages = totalWages+dailyWages;
+			empHrs = empHrs+partTimeWorkingHrs;
 			System.out.println(totalWages);
 			break;
 			
